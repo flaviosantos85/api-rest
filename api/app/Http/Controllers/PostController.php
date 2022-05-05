@@ -35,6 +35,7 @@ class PostController extends Controller
 
     public function addPost(Request $req)
     {
+        
         $error = false;
         if(!$req->filled('title'))
         {
@@ -46,7 +47,7 @@ class PostController extends Controller
 
         if($error)
         {
-            return response()->json(['success' => false, 'message'=> 'failure.'], 400);
+            //return response()->json(['success' => false, 'message'=> 'failure.'], 400);
         }
 
         $data = array(
@@ -66,6 +67,8 @@ class PostController extends Controller
 
     public function updatePost($id, Request $req)
     {
+        //header("Access-Control-Allow-Origin: *");
+        //echo json_encode($req->all()); exit;
         $error = false;
         if(!$req->filled('title'))
         {
