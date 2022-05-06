@@ -1,5 +1,4 @@
-# api-rest
-
+# SPA API-REST BLOG
 Available endpoints
 
 GET - http://localhost:8000/api/list-posts - Retrieve all of posts into database<br>
