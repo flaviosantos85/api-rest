@@ -1,5 +1,5 @@
 # SPA API-REST BLOG<br>
-technologies applied<br>
+technologies applied: Laravel (Backend) and React (frontend)<br><br>
 Available endpoints
 
 GET - http://localhost:8000/api/list-posts - Retrieve all of posts into database<br>
