@@ -11,15 +11,22 @@ import {
 import './App.css';
 
 const App = () => {
+  const [post, setPost] = useState([])
+
+  useEffect( () => {
+    fetch('http://127.0.0.1:8000/api/list-posts')
+    .then( resp => resp.json() )
+    .then( resp => setPost(resp.posts) )
+  }, [])
 
   return (
     <div className='main-container'>
       <Router>
       <div>
         <Routes>
-          <Route exact path="/" element={ <List /> } />
+          <Route exact path="/" element={ <List posts={ post } /> } />
           <Route path="/add-post" element={ <Addpost /> } />
-          <Route path="/edit-post/:id" element={ <Editpost /> } />
+          <Route path="/edit-post/:id" element={ <Editpost post={ post } /> } />
         </Routes>
       </div>
     </Router>
